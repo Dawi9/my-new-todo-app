@@ -1,6 +1,6 @@
 import json
 
-from main import message
+from cli import message
 
 with open("files/questions.json", 'r') as file:
     content = file.read()

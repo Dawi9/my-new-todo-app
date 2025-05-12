@@ -28,7 +28,7 @@ while True:
 
         for index, item in enumerate(todos):
             item = item.strip('\n')
-            row = f"{index + 1}-{item}"
+            row = f"{index + 1}-{item.strip()}"
             print(row)
 
 
