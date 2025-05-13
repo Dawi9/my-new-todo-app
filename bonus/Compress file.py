@@ -1,26 +1,17 @@
 import FreeSimpleGUI as sg
-from zipfile import ZipFile, ZIP_DEFLATED
-from pathlib import Path
 
 label1 = sg.Text("Select files to compress:")
 input1 = sg.Input()
-choose_button1 = sg.FilesBrowse("Choose", key="files")
+choose_button1 = sg.FilesBrowse("Choose")
 
 label2 = sg.Text("Select destination folder:")
 input2 = sg.Input()
-choose_button2 = sg.FolderBrowse("Choose", key="folder")
+choose_button2 = sg.FolderBrowse("Choose")
 
 compress_button = sg.Button("Compress")
-output_label = sg.text(key = "output")
 window = sg.Window("File Compressor", layout=[[label1, input1, choose_button1],
                                               [label2, input2, choose_button2],
-                                              [compress_button, output_label]])
-while True:
-    event, value = window.read()
-    if event == sg.WIN_CLOSED:
-        break
+                                              [compress_button]])
 
-    output_label = sg.Text(key="output", text="")
-        #sg.popup("Compression completed!")
-
+window.read()
 window.close()
